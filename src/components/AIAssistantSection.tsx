@@ -43,7 +43,7 @@ const AIAssistantSection = () => {
   };
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section id="ai" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
@@ -217,7 +217,12 @@ const AIAssistantSection = () => {
                     <p className="text-xs text-muted-foreground mb-3">
                       For urgent medical situations, contact emergency services immediately
                     </p>
-                    <Button variant="emergency" size="sm" className="w-full">
+                    <Button 
+                      variant="emergency" 
+                      size="sm" 
+                      className="w-full"
+                      onClick={() => window.open('tel:108', '_self')}
+                    >
                       Emergency Services
                     </Button>
                   </div>

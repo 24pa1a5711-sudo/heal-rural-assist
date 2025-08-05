@@ -20,7 +20,7 @@ const AppointmentSection = () => {
   const timeSlots = ["09:00 AM", "10:00 AM", "11:00 AM", "02:00 PM", "03:00 PM", "04:00 PM"];
 
   return (
-    <section className="py-20 bg-background">
+    <section id="appointment" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
@@ -158,7 +158,12 @@ const AppointmentSection = () => {
                 </div>
               </div>
 
-              <Button variant="hero" size="lg" className="w-full">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="w-full"
+                onClick={() => alert('Appointment booking submitted! You will receive a confirmation call within 30 minutes.')}
+              >
                 <Calendar className="h-5 w-5 mr-2" />
                 Book Appointment
               </Button>
@@ -199,7 +204,11 @@ const AppointmentSection = () => {
                           <span className="text-muted-foreground">Available: </span>
                           <span className="text-secondary font-medium">{doctor.available}</span>
                         </div>
-                        <Button variant="appointment" size="sm">
+                        <Button 
+                          variant="appointment" 
+                          size="sm"
+                          onClick={() => alert(`Dr. ${doctor.name} selected! Please fill the form above to continue.`)}
+                        >
                           Select Doctor
                         </Button>
                       </div>
@@ -221,7 +230,12 @@ const AppointmentSection = () => {
                     <p className="text-sm text-muted-foreground mb-4">
                       Connect with available doctors for emergency consultations
                     </p>
-                    <Button variant="emergency" size="lg" className="gap-2">
+                    <Button 
+                      variant="emergency" 
+                      size="lg" 
+                      className="gap-2"
+                      onClick={() => alert('Connecting you to an available doctor... Please wait.')}
+                    >
                       <Phone className="h-4 w-4" />
                       Instant Consultation
                     </Button>

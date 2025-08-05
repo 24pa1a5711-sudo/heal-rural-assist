@@ -59,6 +59,13 @@ const HeroSection = () => {
                     size="lg"
                     className="flex-col h-auto py-4 gap-2 animate-fade-in-up"
                     style={{ animationDelay: `${index * 100}ms` }}
+                    onClick={() => {
+                      const targetId = action.label === "Book Appointment" ? "#appointment" : 
+                                       action.label === "Emergency" ? "#emergency" : 
+                                       action.label === "Medicine" ? "#services" : 
+                                       "#ai";
+                      document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                    }}
                   >
                     <action.icon className="h-6 w-6" />
                     <span className="text-xs">{action.label}</span>
@@ -69,11 +76,21 @@ const HeroSection = () => {
 
             {/* Main CTA */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="xl" className="gap-2">
+              <Button 
+                variant="hero" 
+                size="xl" 
+                className="gap-2"
+                onClick={() => document.querySelector('#appointment')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 <Calendar className="h-5 w-5" />
                 Book Doctor Appointment
               </Button>
-              <Button variant="outline" size="xl" className="gap-2">
+              <Button 
+                variant="outline" 
+                size="xl" 
+                className="gap-2"
+                onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 <MapPin className="h-5 w-5" />
                 Find Nearby Clinic
               </Button>

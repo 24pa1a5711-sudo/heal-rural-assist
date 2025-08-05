@@ -122,6 +122,17 @@ const ServicesSection = () => {
                 <Button 
                   variant={service.color === 'destructive' ? 'emergency' : 'hero'} 
                   className="w-full"
+                  onClick={() => {
+                    if (service.title === "Doctor Appointments") {
+                      document.querySelector('#appointment')?.scrollIntoView({ behavior: 'smooth' });
+                    } else if (service.title === "AI Health Assistant") {
+                      document.querySelector('#ai')?.scrollIntoView({ behavior: 'smooth' });
+                    } else if (service.title === "Emergency Services") {
+                      window.open('tel:108', '_self');
+                    } else {
+                      alert(`${service.title} feature coming soon!`);
+                    }
+                  }}
                 >
                   {service.buttonText}
                 </Button>
@@ -165,11 +176,21 @@ const ServicesSection = () => {
               Get immediate help from nearby doctors and hospitals
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="outline" size="lg" className="bg-white text-destructive hover:bg-white/90">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="bg-white text-destructive hover:bg-white/90"
+                onClick={() => window.open('tel:108', '_self')}
+              >
                 <Phone className="h-5 w-5 mr-2" />
                 Call Emergency: 108
               </Button>
-              <Button variant="outline" size="lg" className="bg-white/10 text-white border-white hover:bg-white/20">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="bg-white/10 text-white border-white hover:bg-white/20"
+                onClick={() => alert('Hospital locator feature coming soon!')}
+              >
                 <MapPin className="h-5 w-5 mr-2" />
                 Find Nearest Hospital
               </Button>

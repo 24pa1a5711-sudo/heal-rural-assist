@@ -258,11 +258,19 @@ const Footer = () => {
               <h3 className="text-xl font-bold text-white mb-2">Medical Emergency?</h3>
               <p className="text-white/90 mb-4">Get immediate medical assistance 24/7</p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button variant="outline" className="bg-white text-destructive hover:bg-white/90">
+                <Button 
+                  variant="outline" 
+                  className="bg-white text-destructive hover:bg-white/90"
+                  onClick={() => window.open('tel:108', '_self')}
+                >
                   <Phone className="h-4 w-4 mr-2" />
                   Call 108 - Emergency
                 </Button>
-                <Button variant="outline" className="bg-white/10 text-white border-white hover:bg-white/20">
+                <Button 
+                  variant="outline" 
+                  className="bg-white/10 text-white border-white hover:bg-white/20"
+                  onClick={() => alert('Hospital locator feature coming soon!')}
+                >
                   <MapPin className="h-4 w-4 mr-2" />
                   Find Nearest Hospital
                 </Button>
